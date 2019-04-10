@@ -1,7 +1,9 @@
+cmake_minimum_required(VERSION 3.0)
+
 PROJECT(miniz
   LANGUAGES C
-  VERSION "2.0.8")
-cmake_minimum_required(VERSION 2.8)
+  VERSION 2.0.8)
+
 if(CMAKE_BUILD_TYPE STREQUAL "")
   # CMake defaults to leaving CMAKE_BUILD_TYPE empty. This screws up
   # differentiation between debug and release builds.
@@ -10,7 +12,7 @@ if(CMAKE_BUILD_TYPE STREQUAL "")
 CMAKE_C_FLAGS used) Debug Release RelWithDebInfo MinSizeRel." FORCE)
 endif ()
 
-option(BUILD_EXAMPLES "Build examples" OFF)
+option(BUILD_EXAMPLES "Build examples" ON)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
 
@@ -32,7 +34,7 @@ if(BUILD_EXAMPLES)
   set(MINIZ_TESTER_SRC_LIST
       "${CMAKE_CURRENT_SOURCE_DIR}/tests/miniz_tester.cpp"
       "${CMAKE_CURRENT_SOURCE_DIR}/tests/timer.cpp")
-  
+
   add_executable(example1 ${EXAMPLE1_SRC_LIST})
   target_link_libraries(example1 miniz)
   add_executable(example2 ${EXAMPLE2_SRC_LIST})
@@ -48,7 +50,7 @@ if(BUILD_EXAMPLES)
   if(${UNIX})
       target_link_libraries(example6 m)
   endif()
-  
+
   # add_executable(miniz_tester ${MINIZ_TESTER_SRC_LIST})
   # target_link_libraries(miniz_tester miniz)
 endif(BUILD_EXAMPLES)
