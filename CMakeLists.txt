@@ -24,6 +24,7 @@ CMAKE_C_FLAGS used) Debug Release RelWithDebInfo MinSizeRel." FORCE)
 endif ()
 
 option(BUILD_EXAMPLES "Build examples" ON)
+<<<<<<< HEAD
 option(BUILD_FUZZERS "Build fuzz targets" OFF)
 option(AMALGAMATE_SOURCES "Amalgamate sources into miniz.h/c" OFF)
 option(BUILD_HEADER_ONLY "Build a header-only version" OFF)
