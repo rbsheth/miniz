@@ -228,6 +228,7 @@ if(BUILD_FUZZERS)
   target_link_libraries(uncompress_fuzzer miniz)
 endif()
 
-
 set(INCLUDE_INSTALL_DIR "include")
 install(FILES ${INSTALL_HEADERS} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME})
+
+
