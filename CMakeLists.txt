@@ -10,7 +10,7 @@ if(CMAKE_MINOR_VERSION LESS 12)
   project(miniz VERSION "${MINIZ_VERSION}")
   # see issue https://gitlab.kitware.com/cmake/cmake/merge_requests/1799
 else()
-  project(miniz C VERSION "${MINIZ_VERSION}")
+  project(miniz LANGUAGES C VERSION "${MINIZ_VERSION}")
 endif()
 
 include(GNUInstallDirs)
